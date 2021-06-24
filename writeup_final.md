@@ -85,11 +85,10 @@ As a last step, I normalized the image data because the neural network is workin
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-My final model consisted of the following layers:
 
 | Layer         		|     Description	        					|
 |:---------------------:|:---------------------------------------------:|
-| Input         		| 32x32x3 RGB image   							|
+| Input         		| 32x32x1 Gray Scale image   							|
 | [1] Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 1x1 stride,  outputs 28x28x6 				|
@@ -143,7 +142,22 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6]
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
+The first image `no passing` might be difficult to classify because many traffic signs have a round shape and the only key difference is the cars in the center. Also there are variations with trucks that could be difficult to distinguish.
+The color and contrast on the other hand is very good, since it is an image and not a picture taken from a running vehicle.
+
+The second image `50km/h Speed Limit` might be most difficult classify from the chosen examples, since only one number is different from 5 other variations available in the data set. (20km/h, 30km/h, 60km/h, 70km/h and 80km/h) Further since it is gray scaled it might be difficult to judge the difference between speed limit and the end of speed limit signs.
+The color and contrast on the other hand is very good, since it is an image and not a picture taken from a running vehicle.
+The angle is straight from the front, so that should make it relatively easy to recognize.
+
+The third image `Yield` might be fairly easy to classify because of the dominant shape and no specific writing in the traffic sign.
+The color and contrast on the other hand is very good, since it is an image and not a picture taken from a running vehicle.
+Frontal view as well as good brightness should make this a very high probability for this traffic sign.
+
+The fourth image `End of all speed limits` is in RGB easy to distinguish but as gray scale it might be not so easy to distinguish between the other similar signs related to speed limits.
+The color is in the original already gray scale. Contrast is very good like all the images before, since it is an image and not a picture taken from a running vehicle.
+
+The fifth image `Road Works` is also fairly good to classify from the other options in the dataset. The triangle shape as well as the icon in the middle are good to recognize. In color as well as in gray scaled form.
+The color and contrast on the other hand is very good, since it is an image and not a picture taken from a running vehicle.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set
 
